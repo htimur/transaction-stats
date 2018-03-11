@@ -1,0 +1,27 @@
+group 'io.github.htimur'
+
+version '0.0.1-SNAPSHOT'
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath("gradle.plugin.com.github.lkishalmi.gatling:gradle-gatling-plugin:0.7.1")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: "com.github.lkishalmi.gatling"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
