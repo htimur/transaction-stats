@@ -7,7 +7,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    }
 }
 
 apply plugin: 'java'
@@ -23,8 +23,12 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
-	compile("org.springframework.boot:spring-boot-starter-web")
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('com.lightbend.akka:akka-stream-alpakka-spring-web_2.12:0.17')
+	compile('com.google.guava:guava:24.0-jre')
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.awaitility:awaitility:3.1.0')
+    testCompile('com.typesafe.akka:akka-stream-testkit_2.12:2.5.11')
 }
